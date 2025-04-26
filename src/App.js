@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import TutorialAssistant from './components/TutorialAssistant';
+import AdditionalInfo from './components/AdditionalInfo'; // NEU: Importieren
 import tutorialContentB2B from './data/tutorialContent'; // B2B Inhalte
 import meetingGptContent from './data/meetingGptContent'; // Meeting Inhalte
-import ReactPlayer from 'react-player/lazy'; // Import react-player (lazy load für bessere Performance)
+// import ReactPlayer from 'react-player/lazy'; // Nicht mehr benötigt
 import './App.css';
 
 /**
@@ -12,9 +13,9 @@ import './App.css';
 function App() {
   // const [showTutorial, setShowTutorial] = useState(true); // Zustand nicht mehr benötigt
   // --- NEU: State für die Sichtbarkeit des Video-Modals ---
-  const [showVideo, setShowVideo] = useState(false);
+  // const [showVideo, setShowVideo] = useState(false);
   // --- NEU: State für ReactPlayer Modal ---
-  const [showReactPlayer, setShowReactPlayer] = useState(false);
+  // const [showReactPlayer, setShowReactPlayer] = useState(false);
   const [selectedTutorial, setSelectedTutorial] = useState('b2b');
   const tutorials = {
     b2b: tutorialContentB2B,
@@ -29,7 +30,7 @@ function App() {
   // --- Debugging Logs ---
   // console.log("App.js: showTutorial =", showTutorial); // Zustand entfernt
   const currentContent = tutorials[selectedTutorial];
-  console.log("App.js: selectedTutorial =", selectedTutorial);
+  // console.log("App.js: selectedTutorial =", selectedTutorial);
   console.log("App.js: currentContent =", currentContent); // Überprüfen, ob die Daten geladen werden
 
   return (
@@ -40,7 +41,7 @@ function App() {
         <h1 className="text-xl font-semibold text-center text-gray-700">GPT Tutorial Assistent</h1> {/* App Titel */}
       </header>
 
-      <main className="container mx-auto px-4"> {/* Hauptinhalt Container */}
+      <main className="container mx-auto px-4 pb-8"> {/* Hauptinhalt Container - padding bottom hinzugefügt */}
 
         {/* --- NEU: Einführung zum Tutorial --- */}
         <div className="mb-8 p-6 bg-white rounded-lg shadow text-center">
@@ -72,100 +73,33 @@ function App() {
         </div>
 
         {/* Tutorial Assistant Komponente */}
-        {/* Zeige das Tutorial immer an, wenn currentContent vorhanden ist */}
-        {currentContent && (
-          <div className="mt-8"> {/* Abstand nach oben */}
-            {/* --- NEU: Key hinzugefügt, um Komponente bei Tutorial-Wechsel neu zu mounten --- */}
+        {currentContent && currentContent.sections && (
+          <div className="mt-8">
             <TutorialAssistant
-              key={currentContent.id}
-              content={currentContent}
-              onShowVideoClick={() => setShowVideo(true)}
-              // --- NEU: Prop für ReactPlayer Modal übergeben ---
-              onShowReactPlayerClick={() => setShowReactPlayer(true)}
+              key={`${currentContent.id}-sections`} // Eindeutiger Key
+              content={currentContent} // Übergibt das gesamte Objekt, aber TA nutzt nur sections
             />
           </div>
         )}
 
+        {/* NEU: AdditionalInfo Komponente (zeigt den Rest) */}
+        {currentContent && (
+          <AdditionalInfo
+             key={`${currentContent.id}-additional`} // Eindeutiger Key
+             prompts={currentContent.prompts}
+             challenges={currentContent.challenges}
+             benefits={currentContent.benefits}
+             roi={currentContent.roi}
+          />
+        )}
+
       </main>
 
-      {/* --- NEU: Video Modal --- */}
-      {showVideo && (
-        // Overlay für den Hintergrund
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-          onClick={() => setShowVideo(false)} // Schließt Modal bei Klick auf Overlay
-        >
-          {/* Modal-Inhalt (verhindert Schließen bei Klick auf Video) */}
-          <div
-            className="bg-white p-4 rounded-lg shadow-xl relative max-w-4xl w-full" // Größere max-width
-            onClick={(e) => e.stopPropagation()} // Verhindert, dass Klick auf Modal das Overlay schließt
-          >
-            {/* Schließen-Button (oben rechts) */}
-            <button
-              onClick={() => setShowVideo(false)}
-              className="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-3xl font-bold leading-none"
-              aria-label="Video schließen" // Für Barrierefreiheit
-            >
-              &times; {/* HTML-Entität für 'X' */}
-            </button>
+      {/* --- Video Modal ENTFERNT --- */}
+      {/* {showVideo && ( ... )} */}
 
-            {/* --- NEU: YouTube Iframe Embed --- */}
-            {/* Container für responsives Seitenverhältnis (16:9) mit Tailwind */}
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                width="100%" // Nimmt volle Breite des Containers
-                height="100%" // Nimmt volle Höhe des Containers
-                // Beispiel YouTube Video ID (Rick Astley)
-                // ?autoplay=1&mute=1 -> Versucht Autoplay (stummgeschaltet, da oft blockiert)
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1"
-                title="YouTube video player" // Wichtig für Barrierefreiheit
-                frameBorder="0" // frameBorder statt frameborder in React
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen // allowFullScreen statt allowfullscreen in React
-                className="rounded" // Optional: Ecken abrunden
-              ></iframe>
-            </div>
-            {/* Hinweis: Die onEnded-Funktion vom <video>-Tag funktioniert hier nicht direkt. */}
-            {/* Das Schließen bei Videoende müsste über die YouTube API implementiert werden. */}
-
-          </div>
-        </div>
-      )}
-
-      {/* --- NEU: ReactPlayer Modal --- */}
-      {showReactPlayer && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4" // Etwas weniger Opazität
-          onClick={() => setShowReactPlayer(false)}
-        >
-          <div
-            className="bg-gray-900 p-4 rounded-lg shadow-xl relative max-w-3xl w-full" // Dunkler Hintergrund
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowReactPlayer(false)}
-              className="absolute -top-2 -right-2 text-white bg-gray-700 rounded-full h-8 w-8 flex items-center justify-center text-lg font-bold leading-none hover:bg-gray-600"
-              aria-label="Player schließen"
-            >
-              &times;
-            </button>
-
-            {/* ReactPlayer Komponente */}
-            <div className="aspect-w-16 aspect-h-9"> {/* Seitenverhältnis */}
-              <ReactPlayer
-                url='/videos/intro.webm' // Test mit WebM Format
-                // Alternativ: url='https://www.youtube.com/watch?v=your_video_id'
-                controls={true}       // Zeigt die Player-eigenen Controls an
-                width='100%'
-                height='100%'
-                // Weitere Optionen: loop, muted, volume, onEnded, onProgress etc.
-                // config={{ file: { attributes: { controlsList: 'nodownload' } } }} // Beispiel Konfiguration
-              />
-            </div>
-             {/* Hinweis: Stelle sicher, dass die Datei /videos/intro.mp4 im public Ordner existiert! */}
-          </div>
-        </div>
-      )}
+      {/* --- ReactPlayer Modal ENTFERNT --- */}
+      {/* {showReactPlayer && ( ... )} */}
 
       <footer className="text-center p-4 mt-8 text-gray-500 text-sm"> {/* Beispiel Footer */}
         <p>Entwickelt mit React & Tailwind CSS</p>

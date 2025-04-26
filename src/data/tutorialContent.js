@@ -1,4 +1,5 @@
-// tutorialContent.js - Inhaltsdaten für den B2B-Kaltakquise-GPT-Assistenten
+// tutorialContent.js - Inhaltsdaten für den B2B-Kaltakquise-GPT-Assistenten 
+//Version 0.1.3 Robert Kron
 
 const tutorialContent = {
   id: "b2b-cold-email",
@@ -9,46 +10,52 @@ const tutorialContent = {
     {
       id: "preparation",
       title: "Vorbereitung",
-      tasks: [
+      description: "Stelle sicher, dass alle Voraussetzungen erfüllt sind, bevor du mit der GPT-Erstellung beginnst.",
+      steps: [
         { id: "prep1", text: "ChatGPT-Konto mit Plus-Abonnement sicherstellen" },
         { id: "prep2", text: "Perplexity-Konto für die Recherche einrichten" },
-        { id: "prep3", text: "Unternehmensinformationen zusammenstellen" },
-        { id: "prep4", text: "Beispiel-Zielunternehmen für Tests auswählen" }
+        { id: "prep3", text: "Unternehmensinformationen zusammenstellen (Digitale Beschreibungen, Marketingmaterial, etc.)" },
+        { id: "prep4", text: "Beispiel-Zielunternehmen für Tests auswählen (muss eine Website haben)" }
       ]
     },
     {
       id: "step1",
       title: "Schritt 1: GPT-Editor öffnen",
-      tasks: [
-        { id: "s1t1", text: "Bei ChatGPT einloggen" },
-        { id: "s1t2", text: "\"GPTs erstellen\" auswählen" },
-        { id: "s1t3", text: "\"Neuer GPT\" anklicken" }
+      description: "Navigiere zum Editor, um deinen neuen GPT zu erstellen.",
+      steps: [
+        { id: "s1t1", text: "Bei ChatGPT-Konto einloggen" },
+        { id: "s1t2", text: "Links im Menübaum \"GPTs erkunden\" auswählen" },
+        { id: "s1t3", text: "Oben rechts \"+ Erstellen\" anklicken um den GPT erstmals zu sichern" }
       ]
     },
     {
       id: "step2",
       title: "Schritt 2: Grundlegende GPT-Konfiguration",
-      tasks: [
-        { id: "s2t1", text: "Namen eingeben: \"B2B Kaltakquise Profi\"" },
-        { id: "s2t2", text: "Beschreibung eingeben: \"Erstellt hochpersonalisierte B2B-Kaltakquise-Emails für Unternehmen jeder Branche basierend auf detaillierten Recherchen zu Zielunternehmen und eigenen Dienstleistungen.\"" },
+      description: "Gib deinem GPT einen Namen, eine Beschreibung und erste Anweisungen.",
+      steps: [
+        { id: "s2t1", text: "Namen eingeben: z.B. \"B2B Kaltakquise Profi\"" },
+        { id: "s2t2", text: "Beschreibung eingeben: z.B. \"Erstellt hochpersonalisierte B2B-Kaltakquise-Emails für Unternehmen jeder Branche basierend auf detaillierten Recherchen zu Zielunternehmen und eigenen Dienstleistungen.\"" },
         { id: "s2t3", text: "Hinweise eingeben (siehe Abschnitt \"Hilfreiche Prompts\")" },
-        { id: "s2t4", text: "Gesprächsaufhänger eingeben: \"Ich möchte eine personalisierte Kaltakquise-Email erstellen. Hier sind Informationen über mein Unternehmen und das Zielunternehmen.\"" }
+        { id: "s2t4", text: "Gesprächsaufhänger eingeben: z.B. \"Ich möchte eine personalisierte Kaltakquise-Email erstellen. Hier sind Informationen über mein Unternehmen und das Zielunternehmen.\"" }
       ]
     },
     {
       id: "step3",
-      title: "Schritt 3: Funktionen aktivieren",
-      tasks: [
+      title: "Schritt 3: Funktionen aktivieren (Stand 04/25)",
+      description: "Wähle die notwendigen Fähigkeiten für deinen GPT aus.",
+      steps: [
         { id: "s3t1", text: "Internetsuche aktivieren ✓" },
-        { id: "s3t2", text: "Code-Interpreter und Datenanalyse aktivieren ✓" },
+        { id: "s3t2", text: "Canvas aktivieren ✓" },
         { id: "s3t3", text: "DALL-E Bildgenerierung deaktivieren ✗" },
-        { id: "s3t4", text: "Canvas deaktivieren ✗" }
+        { id: "s3t4", text: "Code-Interpreter und Datenanalyse deaktivieren ✗" },
+        { id: "s3t5", text: "Oben rechts \"Aktualisieren \" anklicken um den GPT zu sichern" }
       ]
     },
     {
       id: "step4",
       title: "Schritt 4: GPT-Anweisungen eingeben",
-      tasks: [
+      description: "Definiere genau, wie dein GPT arbeiten soll.",
+      steps: [
         { id: "s4t1", text: "Anweisungen für den GPT eingeben (siehe Abschnitt \"Hilfreiche Prompts\")" },
         { id: "s4t2", text: "Anweisungen auf Vollständigkeit prüfen" }
       ]
@@ -56,7 +63,8 @@ const tutorialContent = {
     {
       id: "step5",
       title: "Schritt 5: GPT-Wissen hochladen (optional)",
-      tasks: [
+      description: "Stelle deinem GPT zusätzliche Informationen über dein Unternehmen zur Verfügung.",
+      steps: [
         { id: "s5t1", text: "\"Datei hochladen\" wählen" },
         { id: "s5t2", text: "Unternehmensprofil als Markdown-Datei hochladen" },
         { id: "s5t3", text: "Bei Bedarf weitere Dokumente hochladen (Produktkataloge, Referenzen, etc.)" }
@@ -65,9 +73,10 @@ const tutorialContent = {
     {
       id: "step6",
       title: "Schritt 6: GPT testen",
-      tasks: [
+      description: "Überprüfe die Funktionalität deines GPTs mit einem Testlauf.",
+      steps: [
         { id: "s6t1", text: "\"Vorschau erstellen\" anklicken" },
-        { id: "s6t2", text: "Standardeinstieg verwenden: \"Ich möchte eine personalisierte Kaltakquise-Email erstellen. Hier sind Informationen über mein Unternehmen und das Zielunternehmen.\"" },
+        { id: "s6t2", text: "Standardeinstieg verwenden: \"Ich möchte eine personalisierte Kaltakquise-Email erstellen.\"" },
         { id: "s6t3", text: "Beispiel-Informationen für eigenes Unternehmen bereitstellen" },
         { id: "s6t4", text: "Perplexity-Recherche für Test-Zielunternehmen einfügen" },
         { id: "s6t5", text: "Erstellte Email auf Qualität und Personalisierung prüfen" }
@@ -76,7 +85,8 @@ const tutorialContent = {
     {
       id: "step7",
       title: "Schritt 7: GPT optimieren",
-      tasks: [
+      description: "Verfeinere die Anweisungen basierend auf den Testergebnissen.",
+      steps: [
         { id: "s7t1", text: "Bei Bedarf zu \"Anweisungen\" zurückkehren und Anpassungen vornehmen" },
         { id: "s7t2", text: "GPT erneut testen mit unterschiedlichen Unternehmen" },
         { id: "s7t3", text: "Feintuning basierend auf Testergebnissen" }
@@ -85,7 +95,8 @@ const tutorialContent = {
     {
       id: "step8",
       title: "Schritt 8: GPT veröffentlichen & teilen",
-      tasks: [
+      description: "Mache deinen GPT für dich oder dein Team verfügbar.",
+      steps: [
         { id: "s8t1", text: "\"Erstellen\" anklicken" },
         { id: "s8t2", text: "Zugriffseinstellungen anpassen (privat oder für Team freigeben)" },
         { id: "s8t3", text: "Link zum GPT kopieren und für das Team bereitstellen" }
@@ -94,7 +105,8 @@ const tutorialContent = {
     {
       id: "step9",
       title: "Schritt 9: Perplexity-Recherche-Workflow einrichten",
-      tasks: [
+      description: "Standardisiere den Prozess zur Recherche von Zielunternehmen.",
+      steps: [
         { id: "s9t1", text: "Perplexity-Recherchetemplate erstellen (siehe Abschnitt \"Hilfreiche Prompts\")" },
         { id: "s9t2", text: "Template im Team teilen" },
         { id: "s9t3", text: "Test-Recherche durchführen" }
@@ -103,7 +115,8 @@ const tutorialContent = {
     {
       id: "step10",
       title: "Schritt 10: Schulung & Dokumentation",
-      tasks: [
+      description: "Stelle sicher, dass dein Team den neuen Workflow versteht und anwenden kann.",
+      steps: [
         { id: "s10t1", text: "Anleitung für Team-Mitglieder erstellen" },
         { id: "s10t2", text: "Best Practices für Kaltakquise-Emails dokumentieren" },
         { id: "s10t3", text: "Schulungssitzung für das Team durchführen" },
@@ -116,9 +129,9 @@ const tutorialContent = {
 
   // Hilfreiche Prompts
   prompts: {
-    gptHints: `Dieser GPT hilft dir, hochpersonalisierte Kaltakquise-Emails für B2B-Leads zu erstellen, unabhängig von deiner Branche. Du musst zwei Arten von Informationen bereitstellen:
-1. Informationen über dein eigenes Unternehmen und deine Dienstleistungen/Produkte
-2. Rechercheergebnisse über das Zielunternehmen (z.B. aus Perplexity)
+    gptHints: `Dieser GPT hilft dir, hochpersonalisierte Kaltakquise-Emails für B2B-Leads zu erstellen, unabhängig von deiner Branche.
+1. Sammeln wir Informationen über dein eigenes Unternehmen und deine Dienstleistungen/Produkte uns speichern diese in diesem UseCase ab.
+2. Wir machen eine Recherche über das Zielunternehmen (z.B. aus Perplexity) und verwenden diese Informationen um eine hochpersonalisierte Email zu erstellen.
 
 Der GPT analysiert beide Informationsquellen und erstellt eine überzeugende, personalisierte Email, die auf spezifische Bedürfnisse, Herausforderungen und Möglichkeiten des Zielunternehmens eingeht.
 
@@ -131,9 +144,9 @@ Für die besten Ergebnisse solltest du:
 
 # ARBEITSWEISE
 
-1. Du beginnst jedes Gespräch, indem du den Nutzer nach zwei wichtigen Informationsbereichen fragst:
-   a) Informationen über das eigene Unternehmen (Branche, Produkte, Dienstleistungen, USPs)
-   b) Rechercheergebnisse über das Zielunternehmen
+1. Du beginnst jedes Gespräch, indem du dem Nutzer sagst, welches Unternehmen du repräsentierst (also das aus deiner Wissensdatenbank) und nach wichtigen Informationsbereichen fragst:
+   - Sind die Informationen über das eigene Unternehmen (Branche, Produkte, Dienstleistungen, USPs) die im GPT gespeichert sind noch aktuell oder sind neue Informationen verfügbar
+   - Welche Rechercheergebnisse über das Zielunternehmen vorhanden sind.
 
 2. Du analysierst die bereitgestellten Informationen sorgfältig und identifizierst:
    - Die wichtigsten Dienstleistungen/Produkte des eigenen Unternehmens
@@ -159,69 +172,59 @@ Die Email soll folgende Struktur haben:
 3. Eröffnung: Bezug zu einer aktuellen Entwicklung/Herausforderung des Zielunternehmens
 4. Brücke: Verbindung zwischen Herausforderung und eigener Lösung
 5. Wertversprechen: Spezifischer Mehrwert und potenzielle Ergebnisse
-6. Referenz/Glaubwürdigkeit: Kurzer Verweis auf relevante Erfolge/Erfahrung
-7. Call-to-Action: Konkrete, niedrigschwellige Anfrage für nächsten Schritt
-8. Signatur: Professionell mit vollständigen Kontaktdaten
+6. Call-to-Action: Klarer Vorschlag für den nächsten Schritt (z.B. kurzes Gespräch)
+7. Abschluss: Professionelle Grußformel
 
-# TONALITÄT
+# TON UND STIL
 
-- Professionell aber nicht steif
-- Persönlich aber nicht aufdringlich
-- Selbstbewusst aber nicht überheblich
-- Wertorientiert aber nicht verkäuferisch
-- Auf Augenhöhe mit dem Entscheidungsträger
-- An die jeweilige Branche angepasst (z.B. kreativer für Werbeagenturen, technischer für Industrieunternehmen)
+- Professionell, aber nicht steif
+- Selbstbewusst, aber nicht arrogant
+- Wertorientiert und lösungsorientiert
+- Respektvoll gegenüber der Zeit des Empfängers
+- Vermeide generische Marketingphrasen
 
 # WICHTIGE HINWEISE
 
-- Nutze nur Fakten und Informationen, die in den bereitgestellten Unterlagen enthalten sind
-- Vermeide inhaltsleere Floskeln und generische Aussagen
-- Keine Übertreibungen oder unglaubwürdige Versprechen
-- Kommuniziere von Entscheider zu Entscheider
-- Die Email muss in deutscher Sprache verfasst werden
-- Passe Sprache und Beispiele an die Branche des anbietenden Unternehmens an
-- Stelle eine klare Verbindung zwischen den Bedürfnissen des Zielunternehmens und den Angeboten des eigenen Unternehmens her
+- Nutze die Informationen aus der Perplexity-Recherche intensiv.
+- Gehe spezifisch auf die Branche und die Situation des Zielunternehmens ein.
+- Stelle sicher, dass der Name des Ansprechpartners und des Unternehmens korrekt sind.
+- Passe die Email an, wenn der Nutzer spezifische Wünsche äußert.
+- Frage nach, wenn Informationen unklar sind.
+- Verwende Markdown für die Formatierung der Email.`,
 
-Wenn der Nutzer unzureichende Informationen bereitstellt, frage gezielt nach, um eine bessere Personalisierung zu ermöglichen.
+    perplexityTemplate: `# Perplexity Recherche-Template für B2B Kaltakquise
 
-# BEISPIEL-SZENARIEN (zur Orientierung)
+**Ziel:** Umfassende Informationen über ein Zielunternehmen sammeln, um eine hochpersonalisierte Kaltakquise-Email zu erstellen.
 
-1. Tischlerei → Innenarchitekturbüro
-2. IT-Dienstleister → Produktionsbetrieb
-3. Werbeagentur → Einzelhandelsunternehmen
-4. Finanzberater → Wachstumsorientiertes StartUp
-5. Unternehmensberater → Familienunternehmen im Generationswechsel
+**Fokus:** Konzentriere dich auf aktuelle Herausforderungen, strategische Ziele, relevante Kennzahlen und Entscheidungsträger.
 
-Für jedes Szenario passt du Tonalität, Fachbegriffe und Wertversprechen entsprechend an.`,
+**Anweisungen für Perplexity:**
 
-    perplexityResearch: `Recherchiere umfassend folgendes Unternehmen anhand der Website-URL: [WEBSITE-URL EINFÜGEN]
+"Führe eine detaillierte Recherche über das Unternehmen [Name des Zielunternehmens] mit Sitz in [Ort, falls bekannt] durch. Konzentriere dich auf folgende Aspekte und präsentiere die Ergebnisse strukturiert:
 
-Erstelle einen detaillierten Bericht mit folgenden Informationen:
+1. Unternehmensprofil & Kerngeschäft
+   - Branche und Marktposition
+   - Hauptprodukte oder Dienstleistungen
+   - Zielkunden und Wertversprechen
+   - Unternehmensgröße (Mitarbeiter, Umsatz, falls verfügbar)
+   - Standorte und wichtige Märkte
 
-1. Unternehmensprofil & Marktposition
-   - Vollständiger Name, Gründungsjahr, Standorte
-   - Kernprodukte und -dienstleistungen
-   - Hauptzielgruppen und Marktsegmente
-   - Marktpositionierung und USPs
-   - Größe (Mitarbeiterzahl, falls verfügbar)
+2. Aktuelle Situation & Herausforderungen
+   - Kürzliche Nachrichten, Pressemitteilungen oder Ankündigungen
+   - Bekannte geschäftliche Herausforderungen oder Schmerzpunkte (z.B. aus Branchenberichten, Interviews)
+   - Strategische Initiativen oder Ziele (z.B. Expansion, Digitalisierung, Nachhaltigkeit)
+   - Finanzielle Performance (falls öffentlich zugänglich)
 
-2. Geschäftsführung & Entscheidungsträger
+3. Management & Entscheidungsträger
    - Name und Position des CEO/Geschäftsführers
-   - Führungsteam mit vollständigen Namen und Funktionen
-   - Hintergrundinformationen zu Schlüsselpersonen (Ausbildung, Werdegang)
-   - LinkedIn-Profile und andere öffentliche Präsenzen der Führungskräfte
+   - Weitere relevante Führungskräfte (z.B. Vertriebsleiter, Marketingleiter, IT-Leiter - je nach eigenem Angebot)
+   - Kürzliche Zitate oder öffentliche Äußerungen von Führungskräften
 
-3. Aktuelle Entwicklungen & Neuigkeiten
-   - Jüngste Pressemitteilungen und Unternehmensnachrichten
-   - Aktuelle Projekte und Produkteinführungen
-   - Erwähnungen in Branchenpublikationen oder Nachrichtenquellen
-   - Teilnahme an Messen, Konferenzen oder Branchenevents
-
-4. Herausforderungen & Schmerzpunkte
-   - Erkennbare Probleme oder Herausforderungen des Unternehmens
-   - Branchenspezifische Schwierigkeiten
-   - Wettbewerbsdruck und Marktveränderungen
-   - Kundenrezensionen oder -feedback, die auf Probleme hindeuten könnten
+4. Online-Präsenz & Marketing
+   - Qualität und Inhalt der Website
+   - Aktivität auf Social Media (insbesondere LinkedIn)
+   - Erkennbare Marketingstrategien oder Kampagnen
+   - Kundenbewertungen oder Fallstudien
 
 5. Technologie & Digitalisierungsgrad
    - Vorhandene technologische Infrastruktur
@@ -255,7 +258,7 @@ Bitte berücksichtige alle öffentlich zugänglichen Quellen, einschließlich:
 - Kundenrezensionen und -bewertungen
 - Interviews oder Vorträge von Führungskräften
 
-Falls verfügbar, füge Links zu den wichtigsten Quellen bei.`
+Falls verfügbar, füge Links zu den wichtigsten Quellen bei."`
   },
 
   // Herausforderungen der B2B-Kaltakquise
