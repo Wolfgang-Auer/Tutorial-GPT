@@ -19,13 +19,24 @@ const tutorialContent = {
       ]
     },
     {
+      id: "info-search",
+      title: "Informationssuche zum eigenen Unternehmen",
+      description: "Bevor du den GPT nutzt, musst du relevante Informationen über dein Unternehmen sammeln. Perplexity Tiefensuche ist dafür gut geeignet.",
+      steps: [
+        { id: "is1", text: "Öffne Perplexity (https://www.perplexity.ai/)." },
+        { id: "is2", text: "Verwende das Recherche-Template (siehe Abschnitt 'Hilfreiche Prompts, Perplexity Recherche-Template (Eigenes Unternehmen)'), um nach Informationen zu deinem Unternehmen zu suchen." },
+        { id: "is3", text: "Verwende Forschung, wähle bei den Quellen die Option Sozial aus und füge den Link zu deiner Webseite ein." },
+        { id: "is4", text: "Prüfe die Ergebnisse und unter Exportieren die Option Markdown auswählen und speichere diese als Datei für die spätere eingabe in den GPT am Desktop." }
+      ]
+    },
+    {
       id: "step1",
       title: "Schritt 1: GPT-Editor öffnen",
       description: "Navigiere zum Editor, um deinen neuen GPT zu erstellen.",
       steps: [
         { id: "s1t1", text: "Bei ChatGPT-Konto einloggen" },
         { id: "s1t2", text: "Links im Menübaum \"GPTs erkunden\" auswählen" },
-        { id: "s1t3", text: "Oben rechts \"+ Erstellen\" anklicken um den GPT erstmals zu sichern" }
+        { id: "s1t3", text: "Oben rechts \"+ Erstellen\" anklicken um den GPT erstmals zu erstellen" }
       ]
     },
     {
@@ -33,10 +44,11 @@ const tutorialContent = {
       title: "Schritt 2: Grundlegende GPT-Konfiguration",
       description: "Gib deinem GPT einen Namen, eine Beschreibung und erste Anweisungen.",
       steps: [
+        { id: "s2t0", text: "Auf das Plus Symbol in der Mitte drücken und ein Foto hochladen oder mit DALL-E ein Bild generieren" },
         { id: "s2t1", text: "Namen eingeben: z.B. \"B2B Kaltakquise Profi\"" },
-        { id: "s2t2", text: "Beschreibung eingeben: z.B. \"Erstellt hochpersonalisierte B2B-Kaltakquise-Emails für Unternehmen jeder Branche basierend auf detaillierten Recherchen zu Zielunternehmen und eigenen Dienstleistungen.\"" },
-        { id: "s2t3", text: "Hinweise eingeben (siehe Abschnitt \"Hilfreiche Prompts\")" },
-        { id: "s2t4", text: "Gesprächsaufhänger eingeben: z.B. \"Ich möchte eine personalisierte Kaltakquise-Email erstellen. Hier sind Informationen über mein Unternehmen und das Zielunternehmen.\"" }
+        { id: "s2t2", text: "Beschreibung eingeben: z.B. \"Erstellt hochpersonalisierte B2B-Kaltakquise-Emails für Unternehmen jeder Branche basierend auf detaillierten Recherchen zum Unternehmen des Kunden und den eigenen Dienstleistungen.\"" },
+        { id: "s2t3", text: "Hinweise für den GPT eingeben (siehe Abschnitt \"Hilfreiche Prompts\")" },
+        { id: "s2t4", text: "Gesprächsaufhänger eingeben: z.B. \"Ich möchte eine personalisierte Kaltakquise-Email erstellen. Hier sind Informationen zum Unternehmen des Kunden und verwende das Wissen zu meinen Dienstleistungen.\"" }
       ]
     },
     {
@@ -46,9 +58,8 @@ const tutorialContent = {
       steps: [
         { id: "s3t1", text: "Internetsuche aktivieren ✓" },
         { id: "s3t2", text: "Canvas aktivieren ✓" },
-        { id: "s3t3", text: "DALL-E Bildgenerierung deaktivieren ✗" },
-        { id: "s3t4", text: "Code-Interpreter und Datenanalyse deaktivieren ✗" },
-        { id: "s3t5", text: "Oben rechts \"Aktualisieren \" anklicken um den GPT zu sichern" }
+        { id: "s3t3", text: "Bildgenerierung mit 4o ✗" },
+        { id: "s3t4", text: "Code-Interpreter und Datenanalyse deaktivieren ✗" }
       ]
     },
     {
@@ -56,17 +67,17 @@ const tutorialContent = {
       title: "Schritt 4: GPT-Anweisungen eingeben",
       description: "Definiere genau, wie dein GPT arbeiten soll.",
       steps: [
-        { id: "s4t1", text: "Anweisungen für den GPT eingeben (siehe Abschnitt \"Hilfreiche Prompts\")" },
+        { id: "s4t1", text: "Unter Hinweise die Anweisungen für den GPT einfügen (siehe Abschnitt \"Hilfreiche Prompts\")" },
         { id: "s4t2", text: "Anweisungen auf Vollständigkeit prüfen" }
       ]
     },
     {
       id: "step5",
-      title: "Schritt 5: GPT-Wissen hochladen (optional)",
-      description: "Stelle deinem GPT zusätzliche Informationen über dein Unternehmen zur Verfügung.",
+      title: "Schritt 5: GPT-Wissen hochladen",
+      description: "Stelle deinem GPT Informationen über dein Unternehmen und Dienstleistungen zur Verfügung.",
       steps: [
         { id: "s5t1", text: "\"Datei hochladen\" wählen" },
-        { id: "s5t2", text: "Unternehmensprofil als Markdown-Datei hochladen" },
+        { id: "s5t2", text: "Perplexity-Recherche über eigenes Unternehmen hochladen" },
         { id: "s5t3", text: "Bei Bedarf weitere Dokumente hochladen (Produktkataloge, Referenzen, etc.)" }
       ]
     },
@@ -76,10 +87,10 @@ const tutorialContent = {
       description: "Überprüfe die Funktionalität deines GPTs mit einem Testlauf.",
       steps: [
         { id: "s6t1", text: "\"Vorschau erstellen\" anklicken" },
-        { id: "s6t2", text: "Standardeinstieg verwenden: \"Ich möchte eine personalisierte Kaltakquise-Email erstellen.\"" },
-        { id: "s6t3", text: "Beispiel-Informationen für eigenes Unternehmen bereitstellen" },
-        { id: "s6t4", text: "Perplexity-Recherche für Test-Zielunternehmen einfügen" },
-        { id: "s6t5", text: "Erstellte Email auf Qualität und Personalisierung prüfen" }
+        { id: "s6t2", text: "Standardeinstieg verwenden: \"Ich möchte eine hochpersonalisierte Kaltakquise-Email erstellen.\"" },
+        { id: "s6t3", text: "Zusätzliche Informationen für eigenes Unternehmen bereitstellen" },
+        { id: "s6t4", text: "Perplexity-Recherche für Zielunternehmen einfügen" },
+        { id: "s6t5", text: "Erstellte Email auf Qualität und Personalisierung prüfen und überarbeiten" }
       ]
     },
     {
@@ -97,30 +108,20 @@ const tutorialContent = {
       title: "Schritt 8: GPT veröffentlichen & teilen",
       description: "Mache deinen GPT für dich oder dein Team verfügbar.",
       steps: [
-        { id: "s8t1", text: "\"Erstellen\" anklicken" },
-        { id: "s8t2", text: "Zugriffseinstellungen anpassen (privat oder für Team freigeben)" },
+        { id: "s8t1", text: "Rechts oben auf \"Erstellen\" klicken" },
+        { id: "s8t2", text: "Zugriffseinstellungen anpassen (privat oder für das Team freigeben)" },
         { id: "s8t3", text: "Link zum GPT kopieren und für das Team bereitstellen" }
       ]
     },
     {
       id: "step9",
-      title: "Schritt 9: Perplexity-Recherche-Workflow einrichten",
-      description: "Standardisiere den Prozess zur Recherche von Zielunternehmen.",
-      steps: [
-        { id: "s9t1", text: "Perplexity-Recherchetemplate erstellen (siehe Abschnitt \"Hilfreiche Prompts\")" },
-        { id: "s9t2", text: "Template im Team teilen" },
-        { id: "s9t3", text: "Test-Recherche durchführen" }
-      ]
-    },
-    {
-      id: "step10",
-      title: "Schritt 10: Schulung & Dokumentation",
+      title: "Schritt 9: Schulung & Dokumentation",
       description: "Stelle sicher, dass dein Team den neuen Workflow versteht und anwenden kann.",
       steps: [
-        { id: "s10t1", text: "Anleitung für Team-Mitglieder erstellen" },
-        { id: "s10t2", text: "Best Practices für Kaltakquise-Emails dokumentieren" },
-        { id: "s10t3", text: "Schulungssitzung für das Team durchführen" },
-        { id: "s10t4", text: "Feedback-Prozess einrichten" }
+        { id: "s9t1", text: "Anleitung für Team-Mitglieder erstellen" },
+        { id: "s9t2", text: "Best Practices für Kaltakquise-Emails dokumentieren" },
+        { id: "s9t3", text: "Schulungssitzung für das Team durchführen" },
+        { id: "s9t4", text: "Feedback-Prozess einrichten" }
       ]
     }
   ],
@@ -192,73 +193,198 @@ Die Email soll folgende Struktur haben:
 - Frage nach, wenn Informationen unklar sind.
 - Verwende Markdown für die Formatierung der Email.`,
 
-    perplexityTemplate: `# Perplexity Recherche-Template für B2B Kaltakquise
+    perplexityTemplate: 
+    
+    `[ROLLE]: Agiere als spezialisierter Business Intelligence Analyst mit Fokus auf B2B-Vertriebschancen und Entscheidungsträgeranalyse.
 
-**Ziel:** Umfassende Informationen über ein Zielunternehmen sammeln, um eine hochpersonalisierte Kaltakquise-Email zu erstellen.
+[KONTEXT]: Basierend auf der angegebenen Unternehmenswebsite soll eine akquisefokussierte Unternehmensanalyse erstellt werden. 
+Ziel ist die Identifikation konkreter Ansatzpunkte für eine hochpersonalisierte Verkaufsansprache, die exakt auf aktuelle Herausforderungen, Ziele und Entscheidungsträger des Unternehmens zugeschnitten ist.
+Berücksichtige dabei besonders die aktuellen makroökonomischen und branchenspezifischen Herausforderungen des Marktes wo das Unternehmen tätig ist.
 
-**Fokus:** Konzentriere dich auf aktuelle Herausforderungen, strategische Ziele, relevante Kennzahlen und Entscheidungsträger.
+[AUFGABE]: Analysiere umfassend das Unternehmen unter besonderer Berücksichtigung vertriebsrelevanter Informationen. Durchsuche und kombiniere dabei:
+* Offizielle Website des Unternehmens (besonders Team/About-Seiten, Karriere, aktuelle Projekte)
+* LinkedIn-Profile der Führungskräfte und Entscheidungsträger
+* Pressemitteilungen der letzten 12 Monate
+* Stellenanzeigen (als Indikatoren für aktuelle Herausforderungen)
+* Kundenreferenzen und Fallstudien (für Pain Points und Lösungsansätze)
+* Aktuelle Berichte der Wirtschaftskammern und Branchenverbänden wo das Unternehmen tätig ist
+* Wirtschaftsnachrichten zu aktuellen Herausforderungen der Branche wo das Unternehmen tätig ist
 
-**Anweisungen für Perplexity:**
+Strukturiere die Analyse präzise in folgende Abschnitte:
 
-"Führe eine detaillierte Recherche über das Unternehmen [Name des Zielunternehmens] mit Sitz in [Ort, falls bekannt] durch. Konzentriere dich auf folgende Aspekte und präsentiere die Ergebnisse strukturiert:
+1. Unternehmensprofil
+* Vollständiger Name, Gründungsjahr, Hauptsitz
+* Kernprodukte/-dienstleistungen mit konkreten Anwendungsbeispielen
+* Unternehmensgröße und Wachstumsphase
+* Geschäftsmodell und Umsatzströme
+* Wichtigste Meilensteine der letzten 2-3 Jahre
+* Position im österreichischen Marktumfeld (regional/national/international)
 
-1. Unternehmensprofil & Kerngeschäft
-   - Branche und Marktposition
-   - Hauptprodukte oder Dienstleistungen
-   - Zielkunden und Wertversprechen
-   - Unternehmensgröße (Mitarbeiter, Umsatz, falls verfügbar)
-   - Standorte und wichtige Märkte
+2. Entscheidungsträger und Organisationsstruktur
+* Schlüsselpersonen mit Entscheidungsbefugnis (Namen, Positionen, Hintergrund)
+* LinkedIn-Aktivitäten und berufliche Schwerpunkte der Entscheidungsträger
+* Kommunikationsstil und Fachsprache der Führungsebene (für Tonalität der Akquise)
+* Entscheidungswege und Hierarchien (soweit erkennbar)
 
-2. Aktuelle Situation & Herausforderungen
-   - Kürzliche Nachrichten, Pressemitteilungen oder Ankündigungen
-   - Bekannte geschäftliche Herausforderungen oder Schmerzpunkte (z.B. aus Branchenberichten, Interviews)
-   - Strategische Initiativen oder Ziele (z.B. Expansion, Digitalisierung, Nachhaltigkeit)
-   - Finanzielle Performance (falls öffentlich zugänglich)
+3. Aktuelle Herausforderungen und Initiativen
+* Laufende Projekte und strategische Initiativen 
+* Wachstumsambitionen und neue Märkte/Produkte
+* Erkennbare Engpässe oder Ineffizienzen
+* Technologische Transformationsprozesse
+* Indikatoren für Budget- und Investitionsprioritäten
+* Spezifisch Wirtschaftsherausforderungen wo das Unternehmen tätig ist:
+  - Energiekostenentwicklung und Nachhaltigkeitsdruck
+  - Fachkräftemangel und demographischer Wandel
+  - Digitalisierungsdruck und Automatisierungsbedarf
+  - Inflation und Kostendruck in der Lieferkette
+  - Exportabhängigkeit und internationale Wettbewerbsfähigkeit
+  - Regulatorische Anpassungen und Compliance-Anforderungen
+  - vertriebliche Herausforderungen und Kundengewinnung
 
-3. Management & Entscheidungsträger
-   - Name und Position des CEO/Geschäftsführers
-   - Weitere relevante Führungskräfte (z.B. Vertriebsleiter, Marketingleiter, IT-Leiter - je nach eigenem Angebot)
-   - Kürzliche Zitate oder öffentliche Äußerungen von Führungskräften
+4. Konkrete Pain Points und Bedarfe
+* Spezifische operative Schmerzpunkte des Unternehmens
+* Aktuelle Problemstellungen in den Bereichen, die meine Dienstleistungen adressieren
+* Indizien für Unzufriedenheit mit bestehenden Lösungen
+* Implizite Bedarfe, die in der Kommunikation durchscheinen
+* Dringlichkeit der identifizierten Bedürfnisse
+* Überschneidungen mit typischen Herausforderungen der Branche wo das Unternehmen tätig ist:
+  - Digitale Transformation bei starker handwerklicher/industrieller Tradition
+  - Internationalisierung bei überwiegend KMU-geprägter Wirtschaft
+  - Effizienzsteigerung bei steigenden Betriebskosten
+  - Modernisierung bei gleichzeitiger Bewahrung traditioneller Stärken
 
-4. Online-Präsenz & Marketing
-   - Qualität und Inhalt der Website
-   - Aktivität auf Social Media (insbesondere LinkedIn)
-   - Erkennbare Marketingstrategien oder Kampagnen
-   - Kundenbewertungen oder Fallstudien
+5. Bestehende Lösungsansätze und Partner
+* Aktuell genutzte Tools, Technologien und Dienstleister
+* Kürzlich eingeführte Lösungen oder Partnerschaften
+* Lücken im bestehenden Lösungsportfolio
+* Potenzielle "Replacement"-Chancen
+* Nutzung von Förderungen und Unterstützungsprogrammen
 
-5. Technologie & Digitalisierungsgrad
-   - Vorhandene technologische Infrastruktur
-   - Digitalisierungsstand (Website, Online-Präsenz, E-Commerce)
-   - Verwendete Software oder Plattformen
-   - IT-Partner oder bekannte Technologieanbieter
+6. Unternehmenssprache und Wertekultur
+* Zentrale Begriffe und Schlüsselwörter in der Unternehmenskommunikation
+* Kommunizierte Unternehmenswerte und -kultur
+* Bevorzugte Ansprache (formell/informell, technisch/zugänglich)
+* Content-Typen und Formate, auf die das Unternehmen anspricht
 
-6. Unternehmenskultur & Werte
-   - Kommunizierte Unternehmenswerte und -vision
-   - Nachhaltigkeits- und CSR-Initiativen
-   - Firmenkultur und Arbeitgeberimage
-   - Social-Media-Präsenz und -Aktivität (insbesondere LinkedIn, Instagram, Facebook)
+7. Konkrete Anknüpfungspunkte für Akquise
+* Top 5 spezifische Schmerzpunkte, die meine Dienstleistungen lösen können
+* Passende Case Studies oder Referenzen aus meinem Portfolio
+* Optimaler Zeitpunkt für die Ansprache (basierend auf Geschäftszyklus)
+* Personalisierte Gesprächseinstiege je Entscheidungsträger
 
-7. Wachstumsstrategie & Zukunftspläne
-   - Erkennbare Expansionspläne oder Wachstumsstrategien
-   - Investitionen oder Finanzierungsrunden
-   - Internationale Ausrichtung oder neue Märkte
-   - Ankündigungen zu strategischen Zielen
+8. Akquise-Roadmap
+* Idealer Erstansprechpartner mit konkretem Mehrwertversprechen
+* Empfohlene Schritte für mehrstufigen Akquiseprozess
+* Potenzielle Einwände und Vorbehalte mit Gegenargumenten
+* Konkrete Formulierungsvorschläge für personalisierte Erstansprache
+* Bezug zu erfolgreichen Lösungen für ähnliche Unternehmen in der Branche wo das Unternehmen tätig ist
 
-8. Wettbewerber & Marktumfeld
-   - Hauptkonkurrenten und deren Positionierung
-   - Markttrends und Branchenentwicklungen
-   - Wettbewerbsvorteile und -nachteile
+9. Makroökonomischer Kontext für das Land wo das Unternehmen tätig ist
+* Aktuelle wirtschaftliche Situation der spezifischen Branche wo das Unternehmen tätig ist
+* Relevante Förderprogramme und Unterstützungsmaßnahmen
+* Branchenspezifische Regulierungen und Compliance-Anforderungen
+* Wettbewerbssituation im Markt wo das Unternehmen tätig ist
+* Aktuelle Wirtschaftstrends mit besonderer Relevanz für die Branche
 
-Bitte berücksichtige alle öffentlich zugänglichen Quellen, einschließlich:
-- Die offizielle Unternehmenswebsite
-- Social-Media-Profile (LinkedIn, Instagram, Facebook, Twitter, YouTube)
-- Branchenpublikationen und Nachrichtenquellen
-- Wirtschaftsdatenbanken und Unternehmensregister
-- Stellenausschreibungen des Unternehmens
-- Kundenrezensionen und -bewertungen
-- Interviews oder Vorträge von Führungskräften
+[DENKWEISE]:
+* Präzise Fokussierung auf verkaufsrelevante Informationen
+* Objektive Beurteilung tatsächlicher Bedarfe, nicht nur kommunizierter Wünsche
+* Erkennung impliziter Signale für Veränderungsbereitschaft
+* Verknüpfung identifizierter Probleme mit meinen konkreten Lösungsangeboten
+* Berücksichtigung kultureller und wirtschaftlicher Besonderheiten des Marktes wo das Unternehmen tätig ist
+* Verknüpfung individueller Unternehmensherausforderungen mit übergeordneten Markttrends 
 
-Falls verfügbar, füge Links zu den wichtigsten Quellen bei."`
+[INPUT]: **Website-URL**: [HIER WEBSITE-URL]
+
+[OUTPUT]:
+* Präzise, akquisefokussierte Analyse mit konkreten Handlungsempfehlungen
+* Spezifische, nicht generische Erkenntnisse zu Pain Points und Entscheidungsträgern
+* Direkt umsetzbare Formulierungsvorschläge für personalisierte Erstansprache
+* Klare Verknüpfung mit relevanten Wirtschaftsherausforderungen für das Land wo das Unternehmen tätig ist
+* Referenzierung erfolgreicher Lösungsbeispiele oder Fallstudien für die Branche wo das Unternehmen tätig ist
+`,
+    perplexityOwnCompanyTemplate: 
+    `[ROLLE]: Agiere als strategischer Marketing- und Vertriebsanalyst mit Fokus auf wertorientierte B2B-Kommunikation und Kundenwertdarstellung.
+
+[KONTEXT]: Für die Erstellung hochpersonalisierter Akquise-E-Mails benötige ich eine strukturierte Analyse meines eigenen Unternehmens und meiner Dienstleistungen. Ziel ist es, alle relevanten Informationen zu identifizieren, die den spezifischen Mehrwert meiner Lösungen für potenzielle Kunden überzeugend darstellen können.
+
+[AUFGABE]: Führe eine umfassende Analyse meines Unternehmens durch, indem du folgende Quellen auswerten:
+* Meine Unternehmenswebsite: [HIER MEINE WEBSITE-URL]
+* LinkedIn-Unternehmensprofil und persönliche Profile der Führungskräfte
+* Case Studies und Kundenreferenzen
+* Bewertungen auf Plattformen wie Google, Trustpilot oder branchenspezifischen Portalen
+* Fachartikel, Whitepaper oder Blogbeiträge meines Unternehmens
+
+Strukturiere die Analyse in folgende Abschnitte:
+
+1. Kernkompetenzen und Dienstleistungsportfolio
+* Detaillierte Beschreibung aller angebotenen Dienstleistungen mit jeweiligen Hauptmerkmalen
+* Identifikation der besonders differenzierenden Angebote
+* Katalogisierung der wichtigsten Technologien, Methoden und Prozesse
+* Preispositionierung und Wertverhältnis im Markt (Premium/Mittelfeld/Einstieg)
+* Modularität und Anpassungsfähigkeit der Angebote
+
+2. Nachweisbare Erfolge und Referenzen
+* Konkrete Erfolgsgeschichten mit messbaren Ergebnissen (z.B. "20% Effizienzsteigerung")
+* Branchenspezifische Referenzfälle, kategorisiert nach Problemstellungen
+* Spezifische Kundenzitate mit konkreten Mehrwertbeschreibungen
+* Besonders beeindruckende Transformationsgeschichten von Kunden
+* Branchenspezifische Spezialisierungen und Erfolge
+
+3. Problemlösungskompetenz nach Kundensegmenten
+* Matrix der typischen Kundenprobleme und meiner spezifischen Lösungsansätze
+* Differenzierung nach Unternehmensgröße (KMU, Mittelstand, Konzern)
+* Branchenspezifische Lösungsansätze und Anpassungen
+* Einzigartige Methoden zur Problemlösung im Vergleich zu Wettbewerbern
+* Konkrete "Vorher-Nachher"-Szenarien bei Kundenprojekten
+
+4. Alleinstellungsmerkmale (USPs) und Differenzierungsfaktoren
+* Klar definierte, verifizierbare Alleinstellungsmerkmale
+* Kernunterscheidungen zu direkten Wettbewerbern
+* Besondere Methodik, Technologie oder Philosophie
+* Erfahrungsvorsprünge und Spezialisierungsgrad
+* Zertifizierungen, Auszeichnungen oder Partnerschaften
+
+5. Unternehmenskultur und Serviceverständnis
+* Beschreibung des Kundenerlebnisses und Serviceansatzes
+* Kernwerte und deren Umsetzung in der täglichen Arbeit
+* Nachweisbare Qualitätssicherungsmethoden
+* Kommunikations- und Kollaborationsmodelle mit Kunden
+* Reaktionsfähigkeit und Flexibilität bei unerwarteten Herausforderungen
+
+6. Wertebasierte Überzeugungspunkte
+* Tiefere Unternehmenswerte und -mission
+* Nachhaltigkeitsaspekte und gesellschaftliches Engagement
+* Langfristige Partnerschaftsphilosophie
+* Wissenstransfer und Kundenermächtigung
+* Emotionale Differenzierungsfaktoren jenseits funktionaler Vorteile
+
+7. Akquise-Kommunikationsbaukasten
+* Prägnante Formulierungen meiner Werteversprechen nach Kundensegment
+* Überzeugende Argumente für typische Kundeneinwände
+* Konkrete Formulierungen für verschiedene Schmerzpunkte ("Sie kämpfen vermutlich mit...")
+* Überzeugende Übergänge von Kundenproblemen zu meinen Lösungen
+* Wirkungsvolle Call-to-Actions für verschiedene Entscheiderebenen
+
+8. Optimale Erstgesprächsstrategie
+* Ideale Gesprächseinstiege je nach Kundentyp
+* Schlüsselfragen zur Bedarfsermittlung
+* Typische Kundenreaktionen und erfolgreiche Antwortstrategien
+* Empfohlener Gesprächsablauf für maximale Überzeugungskraft
+* Balance zwischen Zuhören und eigener Lösungspräsentation
+
+[DENKWEISE]:
+* Kundenzentriert: Alle Informationen aus Perspektive des konkreten Kundennutzens betrachten
+* Evidenzbasiert: Fokus auf nachweisbare, quantifizierbare Erfolge und Differenzierungsfaktoren
+* Problemorientiert: Verknüpfung meiner Stärken mit typischen Kundenproblemen
+* Wettbewerbsdifferenzierend: Klare Abgrenzung zu alternativen Lösungsanbietern
+
+[OUTPUT]:
+* Strukturierte Analyse aller vertriebsrelevanten Unternehmensinformationen
+* Überzeugungskräftige Formulierungsbausteine für personalisierte Akquise
+* Segmentierte Mehrwertdarstellung nach Kundentypologien und Problemstellungen
+* Direkt anwendbare Kommunikationsstrategien für die personalisierte Erstansprache
+    `
   },
 
   // Herausforderungen der B2B-Kaltakquise

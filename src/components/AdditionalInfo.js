@@ -46,7 +46,7 @@ function AdditionalInfo({ prompts, challenges, benefits, roi }) {
               )}
               {prompts.perplexityTemplate && (
                 <div className="p-4 bg-gray-100 rounded border border-gray-300">
-                  <h4 className="font-semibold text-gray-800 mb-2">Perplexity Recherche-Template</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">Perplexity Recherche-Template (Zielunternehmen)</h4>
                   <pre className="text-xs text-gray-600 whitespace-pre-wrap overflow-x-auto bg-white p-2 rounded border">
                     {prompts.perplexityTemplate}
                   </pre>
